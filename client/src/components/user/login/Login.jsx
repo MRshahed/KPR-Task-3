@@ -6,7 +6,6 @@ import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  window.localStorage.clear();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
