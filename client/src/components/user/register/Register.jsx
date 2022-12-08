@@ -7,7 +7,7 @@ const Register = () => {
   const [uname, setUname] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
+  window.localStorage.clear();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

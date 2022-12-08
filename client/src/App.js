@@ -8,13 +8,14 @@ import Login from "./components/user/login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+  const user = window.localStorage.getItem("user");
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/main" element={<Slider />}></Route>
+        <Route path="/main" element={user ? <Slider /> : <Login />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -6,7 +6,7 @@ import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
+  window.localStorage.clear();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -16,6 +16,7 @@ const Login = () => {
       });
       if (res.status === 200) {
         window.location.replace("/main");
+        window.localStorage.setItem("user", "true");
       }
     } catch (err) {
       console.log(err);
